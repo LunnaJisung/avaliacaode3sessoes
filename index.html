@@ -1,1 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFuture - Desenvolvimento, IA e Inovação</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <span>TechFuture</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#dev">Desenvolvimento</a></li>
+                    <li><a href="#ia">Inteligência Artificial</a></li>
+                    <li><a href="#setec">SETEC</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+    <main>
+        <!-- Seção 1: Desenvolvimento de Sistemas -->
+        <section id="dev">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Desenvolvimento de Sistemas</h2>
+                    <p>Conheça mais sobre o curso e sua importância no mundo tecnológico</p>
+                </div>
+                
+                <div class="dev-content">
+                    <div class="dev-card">
+                        <i class="fas fa-code"></i>
+                        <h3>O que é Desenvolvimento de Sistemas?</h3>
+                        <p>O curso de Desenvolvimento de Sistemas prepara profissionais para criar, projetar, implementar e gerenciar sistemas computacionais. Os estudantes aprendem linguagens de programação, banco de dados, engenharia de software e muito mais.</p>
+                    </div>
+                    
+                    <div class="dev-card">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Mercado de Trabalho</h3>
+                        <p>Com a transformação digital, a demanda por desenvolvedores continua em alta. Empresas de todos os setores buscam profissionais capacitados para criar soluções tecnológicas inovadoras.</p>
+                    </div>
+                    
+                    <div class="dev-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>Habilidades Desenvolvidas</h3>
+                        <p>Além das competências técnicas, o curso desenvolve raciocínio lógico, resolução de problemas, trabalho em equipe e capacidade de adaptação às novas tecnologias.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Inteligência Artificial -->
+        <section id="ia">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Inteligência Artificial</h2>
+                    <p>Explore os principais temas da IA que estão moldando o futuro</p>
+                </div>
+                
+                <div class="ia-content">
+                    <div class="ia-card">
+                        <div class="ia-thumb">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="ia-info">
+                            <h3>Machine Learning</h3>
+                            <p>Algoritmos que permitem aos sistemas aprenderem e melhorarem com experiência sem serem explicitamente programados.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ia-card">
+                        <div class="ia-thumb">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="ia-info">
+                            <h3>Robótica Inteligente</h3>
+                            <p>Combinação de IA com robótica para criar máquinas autônomas capazes de realizar tarefas complexas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ia-card">
+                        <div class="ia-thumb">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="ia-info">
+                            <h3>Processamento de Linguagem Natural</h3>
+                            <p>Capacidade de sistemas entenderem, interpretarem e gerarem linguagem humana de forma natural.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ia-card">
+                        <div class="ia-thumb">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="ia-info">
+                            <h3>Visão Computacional</h3>
+                            <p>Área que permite aos computadores "enxergarem" e interpretarem o mundo visual através de câmeras e algoritmos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: SETEC Futurista -->
+        <section id="setec" class="setec-section">
+            <div class="tech-grid"></div>
+            <div class="floating-elements">
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+            </div>
+            
+            <div class="container">
+                <div class="setec-content">
+                    <h2>SETEC: Moldando o Futuro</h2>
+                    <p>A SETEC representa a vanguarda da educação tecnológica, preparando os profissionais do futuro com conhecimentos sólidos em desenvolvimento de sistemas, inteligência artificial e inovação.</p>
+                    <p>Nossa missão é integrar tecnologia e educação para criar soluções que transformam a sociedade e impulsionam o progresso humano.</p>
+                    <p>Junte-se a nós nessa jornada rumo ao futuro, onde a tecnologia e a criatividade se encontram para criar possibilidades infinitas.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 TechFuture - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        // Efeito de digitação para o título da SETEC
+        document.addEventListener('DOMContentLoaded', function() {
+            const titles = document.querySelectorAll('.section-title h2');
+            
+            titles.forEach(title => {
+                const text = title.textContent;
+                title.textContent = '';
+                
+                let i = 0;
+                const typeWriter = () => {
+                    if (i < text.length) {
+                        title.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 100);
+                    }
+                };
+                
+                // Inicia o efeito quando o elemento estiver visível na tela
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            typeWriter();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+                
+                observer.observe(title);
+            });
+        });
+    </script>
+</body>
+</html>
