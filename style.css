@@ -1,341 +1,61 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-:root {
-    --primary: #2a7ae4;
-    --secondary: #6c42f5;
-    --accent: #00d9ff;
-    --dark: #121212;
-    --light: #f4f4f4;
-}
-
-body {
-    background-color: var(--dark);
-    color: var(--light);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+body { /*é o corpo da página */
+  color: white; /* Define a cor do texto como branco */
+  background: black; /* Define o fundo/background como preto */
+  margin: 10px; /* zera o espaço próxima a margem da página */
+  font-family: "Chakra Petch", sans-serif; /* Define a fonte do texto */
+  margin-bottom: 100px; /* Adiciona uma margem inferior a página/espaço que estamos usando (de 100 pixels) */
 }
 
 header {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    padding: 20px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-bottom: solid 2px rgb(42, 122, 228);
+  padding: 20px;
+  font-size: 32px;
+  color:rgb(42, 122, 228)
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.chamada { /* Estilização da seção de chamada principal */
+  background: rgb(223, 193, 255); /* Cor de fundo roxa clara */
+  padding-bottom: 80px;  /* Espaçamento interno na parte inferior */
+  padding-top: 80px; /* Espaçamento interno na parte superior */
+display: flex;  /* Ativa o modelo de layout flexbox */
+justify-content: center; /* Centraliza os itens horizontalmente */
 }
 
-.logo {
-    font-size: 28px;
-    font-weight: 700;
-    color: white;
-    display: flex;
-    align-items: center;
+.chamada-texto { /* Estilização do container de texto dentro da chamada */
+  margin-right: 5%; /* Margem à direita para afastar de outros elementos */
+
 }
 
-.logo i {
-    margin-right: 10px;
-    color: var(--accent);
+h1 { /* Estilização dos títulos h1 */
+  font-size: 40px; /* Tamanho grande para títulos principais */
+} 
+
+p { /* Estilização dos parágrafos */
+  font-size: 20px; /* Tamanho de fonte legível para textos */
+} 
+
+.categoria-videos {
+  display: flex; /* Layout flexível em linha */
+  overflow-x: auto; /* Permite rolagem horizontal se necessário */
+  gap: 10px; /* Espaço entre os vídeos */
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
+.categoria {
+  padding-left: 20px; /* Espaço interno à esquerda */
+  padding-right: 20px; /* Espaço interno à direita */
+  margin-top: 50px; /* Espaço superior da seção */
 }
 
-.nav-links li {
-    margin-left: 30px;
+.categoria-videos img {
+  opacity: 0.5; /* Imagens levemente transparentes */
+  height: 200px; /* Altura fixa das miniaturas */
 }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
+.categoria-videos img:hover {
+  opacity: 1.0; /* Ao passar o mouse, imagem fica visível totalmente */
+  border: 3px solid green; /* Adiciona borda verde ao passar o mouse */
 }
 
-.nav-links a:hover {
-    color: var(--accent);
-}
-
-section {
-    padding: 80px 0;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-    position: relative;
-}
-
-.section-title h2 {
-    font-size: 36px;
-    margin-bottom: 15px;
-    background: linear-gradient(to right, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(to right, var(--primary), var(--accent));
-    border-radius: 2px;
-}
-
-.section-title p {
-    font-size: 18px;
-    opacity: 0.8;
-}
-
-/* Seção 1: Desenvolvimento de Sistemas */
-.dev-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.dev-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 25px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.dev-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(42, 122, 228, 0.2);
-}
-
-.dev-card i {
-    font-size: 40px;
-    color: var(--accent);
-    margin-bottom: 20px;
-}
-
-.dev-card h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: var(--accent);
-}
-
-.dev-card p {
-    font-size: 16px;
-    opacity: 0.9;
-}
-
-/* Seção 2: Inteligência Artificial */
-.ia-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-}
-
-.ia-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.ia-card:hover {
-    transform: scale(1.03);
-}
-
-.ia-thumb {
-    height: 180px;
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.ia-thumb i {
-    font-size: 60px;
-    color: white;
-}
-
-.ia-thumb::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-}
-
-.ia-info {
-    padding: 20px;
-}
-
-.ia-info h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: var(--accent);
-}
-
-.ia-info p {
-    font-size: 15px;
-    opacity: 0.9;
-}
-
-/* Seção 3: SETEC Futurista */
-.setec-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23121212" width="100" height="100"/><path d="M0 0L100 100" stroke="%232a7ae4" stroke-width="1"/><path d="M100 0L0 100" stroke="%232a7ae4" stroke-width="1"/></svg>');
-    background-size: cover;
-    padding: 100px 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.setec-content {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
-
-.setec-content h2 {
-    font-size: 42px;
-    margin-bottom: 20px;
-    background: linear-gradient(to right, var(--accent), var(--primary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.setec-content p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    opacity: 0.9;
-}
-
-.tech-grid {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.2;
-    z-index: 1;
-    background-image: 
-        linear-gradient(rgba(66, 133, 244, 0.2) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(66, 133, 244, 0.2) 1px, transparent 1px);
-    background-size: 50px 50px;
-}
-
-.floating-elements {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.floating-element {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--accent);
-    opacity: 0.5;
-    animation: float 15s infinite linear;
-}
-
-.floating-element:nth-child(1) {
-    top: 20%;
-    left: 10%;
-    width: 30px;
-    height: 30px;
-    animation-delay: 0s;
-}
-
-.floating-element:nth-child(2) {
-    top: 60%;
-    left: 80%;
-    animation-delay: 2s;
-    background: var(--primary);
-}
-
-.floating-element:nth-child(3) {
-    top: 40%;
-    left: 65%;
-    width: 40px;
-    height: 40px;
-    animation-delay: 4s;
-    background: var(--secondary);
-}
-
-@keyframes float {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-    50% {
-        transform: translate(20px, 30px) rotate(180deg);
-    }
-    100% {
-        transform: translate(0, 0) rotate(360deg);
-    }
-}
-
-footer {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    padding: 30px 0;
-    text-align: center;
-}
-
-footer p {
-    font-size: 16px;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    
-    .section-title h2 {
-        font-size: 28px;
-    }
-    
-    .dev-content, .ia-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .setec-content h2 {
-        font-size: 32px;
-    }
-    
-    .setec-content p {
-        font-size: 16px;
-    }
+.categoria h2 {
+  color: rgb(42,122,228); /* Cor azul para o título da seção */
 }
