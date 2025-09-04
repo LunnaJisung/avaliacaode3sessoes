@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnologia & Inovação</title>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>   
-    * {
+    <style>
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -16,7 +16,6 @@
         body {
             background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
             color: white;
-            margin-bottom: 100px;
             padding: 20px;
             background-attachment: fixed;
         }
@@ -31,6 +30,36 @@
             text-shadow: 0 0 10px rgba(42, 122, 228, 0.7);
         }
 
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        nav button {
+            background: rgba(42, 122, 228, 0.3);
+            border: 2px solid rgb(42, 122, 228);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        nav button:hover {
+            background: rgba(42, 122, 228, 0.8);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(42, 122, 228, 0.4);
+        }
+
+        nav button.active {
+            background: rgb(42, 122, 228);
+            font-weight: bold;
+        }
+
         .section {
             background: rgba(30, 30, 60, 0.7);
             margin: 40px auto;
@@ -41,6 +70,11 @@
             border: 1px solid rgba(42, 122, 228, 0.3);
             position: relative;
             overflow: hidden;
+            display: none;
+        }
+
+        .section.active {
+            display: block;
         }
 
         .section::before {
@@ -117,126 +151,68 @@
             filter: grayscale(0);
         }
 
-/* Segunda divisão - Inteligência Artificial */
-.ai-topics {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 20px;
-}
+        /* Segunda divisão - Inteligência Artificial */
+        .ai-topics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
 
-.topic {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 20px;
-    transition: all 0.3s ease;
-    text-align: center;
-    border: 1px solid rgba(42, 122, 228, 0.2);
-    position: relative;
-    overflow: hidden;
-}
+        .topic {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid rgba(42, 122, 228, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
 
-.topic::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, #00bcd4, #2a7ae4);
-}
+        .topic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #00bcd4, #2a7ae4);
+        }
 
-.topic:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
+        .topic:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
 
-.topic h3 {
-    color: #00bcd4;
-    margin-bottom: 15px;
-    font-size: 1.4rem;
-}
+        .topic h3 {
+            color: #00bcd4;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
 
-.topic p {
-    margin-bottom: 15px;
-    font-size: 1rem;
-    color: #e0e0e0;
-}
+        .topic p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #e0e0e0;
+        }
 
-.video-thumb {
-    width: 100%;
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
-    margin-top: 10px;
-    height: 160px;
-    display: block;
-}
+        .video-container {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 15px;
+            position: relative;
+        }
 
-.video-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-}
+        .video-container iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+            border-radius: 8px;
+        }
 
-.video-thumb:hover img {
-    transform: scale(1.05);
-}
-
-.video-thumb::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.video-thumb:hover::after {
-    opacity: 1;
-}
-
-.play-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    background: rgba(42, 122, 228, 0.8);
-    border-radius: 50%;
-    z-index: 2;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.play-btn::before {
-    content: '';
-    border-style: solid;
-    border-width: 10px 0 10px 20px;
-    border-color: transparent transparent transparent #ffffff;
-    margin-left: 4px;
-}
-
-.video-thumb:hover .play-btn {
-    opacity: 1;
-}
-
-/* Responsividade para a segunda divisão */
-@media (max-width: 900px) {
-    .ai-topics {
-        grid-template-columns: 1fr;
-    }
-}
         /* Terceira divisão - SETEC */
         .setec-content {
             position: relative;
@@ -297,55 +273,26 @@
             .section-title {
                 font-size: 1.8rem;
             }
-        }
-
-        /* Efeito de partículas no fundo */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background-color: rgba(42, 122, 228, 0.5);
-            border-radius: 50%;
-            animation: particleFloat 20s infinite linear;
-        }
-
-        @keyframes particleFloat {
-            0% {
-                transform: translateY(0) translateX(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100vh) translateX(100vw);
-                opacity: 0;
+            
+            nav button {
+                padding: 10px 15px;
+                font-size: 1rem;
             }
         }
-</style>
+    </style>
 </head>
 <body>
-    <!-- Efeito de partículas de fundo -->
-    <div class="particles" id="particles"></div>
-
     <header>Tecnologia & Inovação</header>
+    
+    <nav>
+        <button class="nav-btn active" data-target="dev-systems">Desenvolvimento de Sistemas</button>
+        <button class="nav-btn" data-target="ia">Inteligência Artificial</button>
+        <button class="nav-btn" data-target="setec">SETEC</button>
+    </nav>
     
     <div class="container">
         <!-- Primeira divisão - Curso de Desenvolvimento de Sistemas -->
-        <section class="section">
+        <section id="dev-systems" class="section active">
             <h2 class="section-title">Desenvolvimento de Sistemas</h2>
             <div class="dev-systems">
                 <div class="text-content">
@@ -360,46 +307,43 @@
             </div>
         </section>
 
-<!-- Segunda divisão - Inteligência Artificial -->
-<section class="section">
-    <h2 class="section-title">Inteligência Artificial</h2>
-    <div class="ai-topics">
-        <div class="topic">
-            <h3>Machine Learning</h3>
-            <p>O Machine Learning (Aprendizado de Máquina) é um subcampo da IA que permite que sistemas aprendam com dados e melhorem com experiência.</p>
-            <a href="https://youtu.be/Iuz_jc96bQk" target="_blank" class="video-thumb">
-                <img src="https://i.ytimg.com/vi/Iuz_jc96bQk/maxresdefault.jpg" alt="Machine Learning">
-                <div class="play-btn"></div>
-            </a>
-        </div>
-        <div class="topic">
-            <h3>Redes Neurais</h3>
-            <p>Redes neurais artificiais são sistemas inspirados no cérebro humano, capazes de reconhecer padrões complexos em dados.</p>
-            <a href="https://youtu.be/s-Ue8SdQy3I" target="_blank" class="video-thumb">
-                <img src="https://i.ytimg.com/vi/s-Ue8SdQy3I/maxresdefault.jpg" alt="Redes Neurais">
-                <div class="play-btn"></div>
-            </a>
-        </div>
-        <div class="topic">
-            <h3>Processamento de Linguagem Natural</h3>
-            <p>PLN é a área da IA que permite que computadores entendam, interpretem e gerem linguagem humana.</p>
-            <a href="https://youtu.be/X1IpNUs1PV8" target="_blank" class="video-thumb">
-                <img src="https://i.ytimg.com/vi/X1IpNUs1PV8/maxresdefault.jpg" alt="Processamento de Linguagem Natural">
-                <div class="play-btn"></div>
-            </a>
-        </div>
-        <div class="topic">
-            <h3>Visão Computacional</h3>
-            <p>A visão computacional permite que máquinas "vejam" e interpretem o mundo visual, extraindo informações de imagens.</p>
-            <a href="https://youtu.be/RSkbjZZb-1c" target="_blank" class="video-thumb">
-                <img src="https://i.ytimg.com/vi/RSkbjZZb-1c/maxresdefault.jpg" alt="Visão Computacional">
-                <div class="play-btn"></div>
-            </a>
-        </div>
-    </div>
-</section>
+        <!-- Segunda divisão - Inteligência Artificial -->
+        <section id="ia" class="section">
+            <h2 class="section-title">Inteligência Artificial</h2>
+            <div class="ai-topics">
+                <div class="topic">
+                    <h3>Machine Learning</h3>
+                    <p>O Machine Learning (Aprendizado de Máquina) é um subcampo da IA que permite que sistemas aprendam com dados e melhorem com experiência.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/Iuz_jc96bQk" title="Machine Learning" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="topic">
+                    <h3>Redes Neurais</h3>
+                    <p>Redes neurais artificiais são sistemas inspirados no cérebro humano, capazes de reconhecer padrões complexos em dados.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/s-Ue8SdQy3I" title="Redes Neurais" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="topic">
+                    <h3>Processamento de Linguagem Natural</h3>
+                    <p>PLN é a área da IA que permite que computadores entendam, interpretem e gerem linguagem humana.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/X1IpNUs1PV8" title="Processamento de Linguagem Natural" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="topic">
+                    <h3>Visão Computacional</h3>
+                    <p>A visão computacional permite que máquinas "vejam" e interpretem o mundo visual, extraindo informações de imagens.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/RSkbjZZb-1c" title="Visão Computacional" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Terceira divisão - SETEC -->
-        <section class="section">
+        <section id="setec" class="section">
             <h2 class="section-title">SETEC - Feira de Tecnologia</h2>
             <div class="setec-content">
                 <p>A SETEC (Semana de Tecnologia) é um evento anual que reúne profissionais, estudantes e entusiastas da área de tecnologia para discutir as últimas tendências e inovações do setor. Durante a feira, são realizadas palestras, workshops, competições de programação e exposições de projetos tecnológicos desenvolvidos por alunos.</p>
@@ -416,37 +360,29 @@
     </div>
 
     <script>
-        // Criar partículas de fundo
+        // Navegação entre seções
         document.addEventListener('DOMContentLoaded', function() {
-            const particlesContainer = document.getElementById('particles');
-            const numberOfParticles = 50;
+            const navButtons = document.querySelectorAll('.nav-btn');
+            const sections = document.querySelectorAll('.section');
             
-            for (let i = 0; i < numberOfParticles; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                // Posição aleatória
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100;
-                
-                // Tamanho aleatório
-                const size = Math.random() * 3 + 1;
-                
-                // Duração da animação aleatória
-                const duration = Math.random() * 20 + 10;
-                
-                // Atraso aleatório
-                const delay = Math.random() * 20;
-                
-                particle.style.left = `${posX}vw`;
-                particle.style.top = `${posY}vh`;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.animationDuration = `${duration}s`;
-                particle.style.animationDelay = `${delay}s`;
-                
-                particlesContainer.appendChild(particle);
-            }
+            navButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const target = this.getAttribute('data-target');
+                    
+                    // Atualizar botões de navegação
+                    navButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Mostrar seção alvo e esconder outras
+                    sections.forEach(section => {
+                        if (section.id === target) {
+                            section.classList.add('active');
+                        } else {
+                            section.classList.remove('active');
+                        }
+                    });
+                });
+            });
         });
     </script>
 </body>
